@@ -34,5 +34,8 @@ def instagram():
         k += 1
         if k > 2:
             break
-        print("{}\n".format(text))
-        print("{}\n".format(hashtags))
+        return ("{}\n".format(text))
+        return ("{}\n".format(hashtags))
+
+
+def tensor():

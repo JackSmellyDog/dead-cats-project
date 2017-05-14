@@ -12,7 +12,7 @@
     <style type="text/css"></style> {% endblock extra_css %}
 </head>
 
-<body class="{% block body_background %} body-backgroud{% endblock %}">
+<!--body class="{% block body_background %} body-backgroud{% endblock %}"-->
 
 {% block top_menu %}
     <!-- Fixed navbar -->
@@ -37,12 +37,12 @@
     {% block container %}
     <div class="jumbotron jumbotron-custom text-center">
       <h1 class="" style="margin-top: 50px; font-size: 100px">GathApp</h1>
-      <p class="description-top" style="color: #006400 !important; font-weight: bold;">Because if you have information, you are boss of entire world!</p>
-      <p class="description" style="color: #006400 !important">Giving compliments isn't just a nice way to get someone's attention, it's also an easy way to make someone feel good and even make yourself feel good.
-      That being said, a lot of people probably receive compliments that sound the same over and over — especially if they have a particularly endearing quality.
+      <p class="description-top" style="color: #006400 !important; font-weight: bold;">Because if you own information, you own the world.</p>
+      <p class="description" style="color: #006400 !important">Nowadays, the problem of information overabundance and the difficulties of operating with it becomes very urgent.
+          GathApp will save your time by collecting and compiling exactly what you need.
       </p>
       <p style="margin-top: 50px; margin-bottom: 100px; color: #006400 !important">
-        <a class="btn btn-lg btn-danger" href="#" role="button" style="font-weight: bold; padding: 13px 20px;">TRY IT FOR FREE</a>
+        <a class="btn btn-lg btn-danger" href="search.html" role="button" style="font-weight: bold; padding: 13px 20px;">TRY IT FOR FREE</a>
       </p>
     </div>
     {% endblock %}
@@ -64,6 +64,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
         integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
         crossorigin="anonymous"></script>
-<script type="text/javascript" src={% static "js/core.js" %}></script>
 </body>
 </html>

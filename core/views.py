@@ -16,6 +16,22 @@ def index(request):
     return render(request, 'base.html')
 
 
+def search(request):
+
+    form = SearchForm(request.POST)
+    if form.is_valid():
+        search = form.cleaned_data.get('search')
+        try:
+            twitter(search)
+        except:
+            instagram(search)
+
+    else:
+        form = SearchForm()
+
+    return render(request, 'search.html', {'form': form, "text": text})
+
+
 def twitter(request):
     consumer_key = 'bJbCKR9bnywpupwE20x16glPk'
     consumer_secret = 'bstcGDbEZVAmOdeQGVwo9GQpfR6x7vFIqsV3ggfUA4mKwCweQ1'
@@ -27,7 +43,7 @@ def twitter(request):
 
     api = tweepy.API(auth)
 
-    user = api.get_user(input("Please enter the twitter username: "))
+    #user = api.get_user(input("Please enter the twitter username: "))
     return (api.me().name)
     return (api.me().description)
 
@@ -35,7 +51,7 @@ def twitter(request):
 def instagram(request):
     k = 0
 
-    username = input("Input username: ")
+    #username = input("Input username: ")
 
     looter = InstaLooter(profile=username)
 

@@ -4,11 +4,10 @@
 {% endblock %}
 {% block container %}
     <h1 style="margin-bottom: 10px; margin-top: 60px;">Search page</h1>
-    <form action="search.html">
+    <form action="search.html" method="get">
     {% csrf_token %}
         <p>Please enter desired username</p>
-        <input type="text" placeholder="only username" formaction="success.html" formmethod="post">
-            {{ form.as_p }}
+        <input type="text" placeholder="only username" formaction="/success.html" formmethod="post">
         <button type="submit">Submit</button>
     </form>
     <div class="gen-text">

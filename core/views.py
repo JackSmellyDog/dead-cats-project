@@ -1,11 +1,14 @@
 import tweepy
 from tweepy import OAuthHandler
 from instaLooter import InstaLooter
+#import geocoder
+import goslate
 from django.shortcuts import render
 
 from .forms import SearchForm
 
 global search
+global text
 
 
 def index(request):
@@ -75,3 +78,13 @@ def tensor():
 
 def success():
     return searching(search)
+
+
+#def geo():
+    #g = geocoder.ip('me')
+    #return g.city
+
+
+def translate():
+    gs = goslate.Goslate()
+    return gs.translate(text, 'ru')

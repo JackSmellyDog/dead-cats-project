@@ -47,8 +47,8 @@ def twitter(request):
     api = tweepy.API(auth)
 
     user = api.get_user(searching(search))
-    return (api.me().name)
-    return (api.me().description)
+    return (user.name)
+    return (user.description)
 
 
 def instagram(request):

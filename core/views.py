@@ -2,7 +2,7 @@ import tweepy
 from tweepy import OAuthHandler
 from instaLooter import InstaLooter
 #import geocoder
-import goslate
+#import goslate
 from django.shortcuts import render
 
 from .forms import SearchForm
@@ -85,6 +85,6 @@ def success():
     #return g.city
 
 
-def translate():
-    gs = goslate.Goslate()
-    return gs.translate(text, 'ru')
+#def translate():
+    #gs = goslate.Goslate()
+    #return gs.translate(text, 'ru')

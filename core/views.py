@@ -17,19 +17,19 @@ def index(request):
 
 
 def search(request):
-
-    form = SearchForm(request.POST)
-    if form.is_valid():
-        search = form.cleaned_data.get('search')
-        try:
-            twitter(search)
-        except:
-            instagram(search)
+    if request.method == 'POST':
+        form = SearchForm()
+        if form.is_valid():
+            search = form.cleaned_data.get('search')
+            try:
+                text = twitter(search)
+            except:
+                text = instagram(search)
 
     else:
         form = SearchForm()
 
-    return render(request, 'search.html', {'form': form, "text": text})
+    return render(request, 'search.html', {'form': form, 'text': text})
 
 
 def twitter(request):
@@ -43,15 +43,14 @@ def twitter(request):
 
     api = tweepy.API(auth)
 
-    #user = api.get_user(input("Please enter the twitter username: "))
+    user = api.get_user(search(search))
     return (api.me().name)
     return (api.me().description)
 
 
 def instagram(request):
     k = 0
-
-    #username = input("Input username: ")
+    username = search(search)
 
     looter = InstaLooter(profile=username)
 

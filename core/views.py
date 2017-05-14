@@ -2,7 +2,6 @@ import tweepy
 from tweepy import OAuthHandler
 from instaLooter import InstaLooter
 from django.shortcuts import render
-import requests
 
 from .forms import SearchForm
 
@@ -60,12 +59,14 @@ def instagram(request):
         hashtags = looter.get_post_info(media['code'])['edge_media_to_caption']['edges'][0]['node']['text'].split('#')[
                    1:]
         picture = looter.get_post_info(media['code'])['display_src']
+        location = looter.get_post_info(media['code'])['location']['name']
         k += 1
-        if k > 2:
+        if k > 4:
             break
-        return ("{}\n".format(text))
-        return ("{}\n".format(hashtags))
-        return ("{}\n".format(picture))
+        return ("{}".format(text))
+        return ("{}".format(hashtags))
+        return ("{}".format(picture))
+        return ("{}".format(location))
 
 
 def tensor():

@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-{% block top_menu %}{% endblock %}
+{% block top_menu %}
+    <nav class="navbar navbar-default navbar-fixed-top" style="color: #006400 !important"></nav>
+{% endblock %}
 {% block container %}
-    <p></p>
-    <h1 style="margin-bottom: 30px">Search page</h1>
+    <h1 style="margin-bottom: 10px; margin-top: 60px;">Search page</h1>
     <form action="search.html">
     {% csrf_token %}
         <p>Please enter desired username</p>

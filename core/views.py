@@ -2,7 +2,6 @@ import tweepy
 from tweepy import OAuthHandler
 from instaLooter import InstaLooter
 from django.shortcuts import render
-import pdb
 import requests
 
 from .forms import SearchForm
@@ -69,3 +68,7 @@ def instagram(request):
 
 def tensor():
     pass
+
+
+def success():
+    return search(search)

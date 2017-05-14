@@ -6,8 +6,8 @@
     <form action="search.html">
     {% csrf_token %}
         <p>Please enter desired username</p>
-        <input type="text" placeholder="only username" formaction="success.html">
-            {{ form }}
+        <input type="text" placeholder="only username" formaction="success.html" formmethod="post">
+            {{ form.as_p }}
         <button type="submit">Submit</button>
     </form>
     <div class="gen-text">

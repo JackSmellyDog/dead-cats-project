@@ -6,6 +6,8 @@ import requests
 
 from .forms import SearchForm
 
+global search
+
 
 def index(request):
     """
@@ -15,7 +17,7 @@ def index(request):
     return render(request, 'base.html')
 
 
-def search(request):
+def searching(request):
     if request.method == 'POST':
         form = SearchForm()
         if form.is_valid():
@@ -42,14 +44,14 @@ def twitter(request):
 
     api = tweepy.API(auth)
 
-    user = api.get_user(search(search))
+    user = api.get_user(searching(search))
     return (api.me().name)
     return (api.me().description)
 
 
 def instagram(request):
     k = 0
-    username = search(search)
+    username = searching(search)
 
     looter = InstaLooter(profile=username)
 
@@ -71,4 +73,4 @@ def tensor():
 
 
 def success():
-    return search(search)
+    return searching(search)
